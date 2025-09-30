@@ -32,15 +32,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 作品卡片点击事件
     workCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const projectTitle = this.querySelector('.work-title').textContent;
-            console.log('点击了项目:', projectTitle);
-            
-            // 这里可以添加跳转到项目详情页的逻辑
-            // 例如：window.location.href = `/project/${projectTitle.toLowerCase().replace(/\s+/g, '-')}`;
-            
-            // 临时显示提示信息
-            showNotification(`即将展示 ${projectTitle} 项目详情`);
+        // 使卡片可聚焦，便于键盘访问
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'link');
+        const link = card.querySelector('.work-title a');
+
+        const navigate = () => {
+            if (link && link.getAttribute('href')) {
+                window.location.href = link.getAttribute('href');
+            }
+        };
+
+        card.addEventListener('click', navigate);
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navigate();
+            }
         });
     });
     
