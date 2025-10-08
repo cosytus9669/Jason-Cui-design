@@ -190,6 +190,17 @@ body {
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.work-title a {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.work-note {
+    font-size: 14px;
+    text-align: center;
 }
 
 .work-card:hover .work-title {
@@ -200,6 +211,7 @@ body {
 .work-title a {
     color: inherit;
     text-decoration: none;
+    font-weight: 700;
 }
 
 /* Add styles for work section images */
@@ -597,4 +609,56 @@ body {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -5px);
+}
+
+.link-card {
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+    margin: 24px 0 40px;
+}
+.link-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.link-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.link-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.link-card a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.link-card a:hover {
+    color: #666;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+.pagination a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+.pagination a:hover {
+    color: #666;
+}
+.pagination img {
+    width: 80px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
 }
