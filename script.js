@@ -63,6 +63,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Pause video when collapsible closed
+    document.querySelectorAll('.video-card').forEach(card => {
+        card.addEventListener('toggle', () => {
+            const vid = card.querySelector('video');
+            if (!vid) return;
+            if (card.open) {
+                vid.play();
+            } else {
+                vid.pause();
+            }
+        });
+    });
+    
     // 滚动时导航栏效果
     let lastScrollTop = 0;
     const header = document.querySelector('.header');
